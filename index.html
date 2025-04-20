@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fasika Gift for Selam</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .container {
+      text-align: center;
+    }
+    #giftBox {
+      width: 200px;
+      height: 200px;
+      background-color: #ff69b4;
+      border-radius: 20px;
+      cursor: pointer;
+      box-shadow: 0 0 30px rgba(255, 105, 180, 0.6);
+      transition: transform 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+    }
+    #giftBox:hover {
+      transform: scale(1.05);
+    }
+    #message {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+    #message img {
+      width: 200px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    #message p {
+      font-size: 1.2rem;
+      color: #800080;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <audio id="bgMusic" src="music.mp3" preload="auto"></audio>
+  <div class="container">
+    <div id="giftBox" onclick="revealGift()">Tap to Open</div>
+    <div id="message">
+      <img src="selam.jpg" alt="Selam's photo" />
+      <p>
+        Happy Fasika, Selam.<br>
+        May your day be full of love, peace, and joy<br>
+        with your beloved family and friends —<br>
+        and the one who cherishes you deeply.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function revealGift() {
+      document.getElementById('giftBox').style.display = 'none';
+      document.getElementById('message').style.display = 'flex';
+      const music = document.getElementById('bgMusic');
+      music.volume = 0.5;
+      music.play();
+    }
+  </script>
+</body>
+</html>
